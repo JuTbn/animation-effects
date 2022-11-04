@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shrink On Scroll</title>
+	<link rel="stylesheet" type="text/css" href="./src/css/style.css">
+</head>
+<body>
+    <section class="section-1">
+    	<header>
+    		<h2 class="logo">LOGO</h2>
+	    	<nav>
+	    		<a href="#" class="active">Home</a>
+	    		<a href="#">Services</a>
+	    		<a href="#">Contact</a>
+	    		<a href="#">About</a>
+	    	</nav>
+    	</header>
+    </section>
+    <section class="section-2">
+    	<h1>Hello</h1>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br>
+    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br>
+    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo <br>
+    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse <br>
+    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <br>
+    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    	<h1>Hello</h1>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br>
+    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br>
+    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo <br>
+    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse <br>
+    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <br>
+    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    	<h1>Hello</h1>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br>
+    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br>
+    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo <br>
+    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse <br>
+    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <br>
+    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+
+
+    <script>
+        let initScrollPosition = 0;
+        let resize = false;
+
+        document.addEventListener('scroll', (e) => {
+            lastKnownScrollPosition = window.scrollY;
+
+            if(!resize && lastKnownScrollPosition > 0){
+                window.requestAnimationFrame(() => {
+                    document.querySelector('header').classList.add('bgc')
+                    resize = true;
+                })
+            }else if(resize && lastKnownScrollPosition == 0){
+                document.querySelector('header').classList.remove('bgc')
+                resize = false;
+            }
+        })
+
+    </script>
+</body>
+</html>
